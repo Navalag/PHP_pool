@@ -1,0 +1,491 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- mendeleiev.html                                    :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: agalavan <marvin@42.fr>                    +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2018/04/02 13:09:57 by agalavan          #+#    #+#            -->
+<!-- Updated: 2018/04/02 13:09:59 by agalavan         ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Periodic table</title>
+	<style>
+		/*body {
+			margin: 0;
+		}*/
+		.divTable{
+			display: table;
+			width: 100%;
+		}
+		.divTableRow {
+			display: table-row;
+		}
+		.divTableHeading {
+			background-color: #EEE;
+			display: table-header-group;
+		}
+		.divTableCell, .divTableHead {
+			border: 1px solid #999999;
+			display: table-cell;
+			padding: 3px 10px;
+		}
+		.divTableHeading {
+			background-color: #EEE;
+			display: table-header-group;
+			font-weight: bold;
+		}
+		.divTableFoot {
+			background-color: #EEE;
+			display: table-footer-group;
+			font-weight: bold;
+		}
+		.divTableBody {
+			display: table-row-group;
+		}
+	</style>
+</head>
+<body>
+	<div class="divTable">
+		<div class="divTableBody">
+			<div class="divTableRow">
+				<div class="divTableCell">
+					<p>Group</p>
+					<p>Period</p>
+				</div>
+				<div class="divTableCell">1</div>
+				<div class="divTableCell">2</div>
+				<div class="divTableCell">3</div>
+				<div class="divTableCell">4</div>
+				<div class="divTableCell">5</div>
+				<div class="divTableCell">6</div>
+				<div class="divTableCell">7</div>
+				<div class="divTableCell">8</div>
+				<div class="divTableCell">9</div>
+				<div class="divTableCell">10</div>
+				<div class="divTableCell">11</div>
+				<div class="divTableCell">12</div>
+				<div class="divTableCell">13</div>
+				<div class="divTableCell">14</div>
+				<div class="divTableCell">15</div>
+				<div class="divTableCell">16</div>
+				<div class="divTableCell">17</div>
+				<div class="divTableCell">18</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">1</div>
+				<div class="divTableCell">
+					<p>1.00794</p>
+					<p>H</p>
+					<p>1</p>
+				</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">
+					<p>4.002602</p>
+					<p>He</p>
+					<p>2</p>
+				</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">2</div>
+				<div class="divTableCell">
+					<p>6.941</p>
+					<p>Li</p>
+					<p>3</p>
+				</div>
+				<div class="divTableCell">
+					<p>9.012182</p>
+					<p>Be</p>
+					<p>4</p>
+				</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">
+					<p>10.811</p>
+					<p>B</p>
+					<p>5</p>
+				</div>
+				<div class="divTableCell">
+					<p>12.0107</p>
+					<p>C</p>
+					<p>6</p>
+				</div>
+				<div class="divTableCell">
+					<p>14.0067</p>
+					<p>N</p>
+					<p>7</p>
+				</div>
+				<div class="divTableCell">
+					<p>15.9994</p>
+					<p>O</p>
+					<p>8</p>
+				</div>
+				<div class="divTableCell">
+					<p>18.998403</p>
+					<p>F</p>
+					<p>9</p>
+				</div>
+				<div class="divTableCell">
+					<p>20.1797</p>
+					<p>Ne</p>
+					<p>10</p>
+				</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">3</div>
+				<div class="divTableCell">
+					<p>22.98976</p>
+					<p>Na</p>
+					<p>11</p>
+				</div>
+				<div class="divTableCell">
+					<p>24.98976</p>
+					<p>Mg</p>
+					<p>12</p>
+				</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">
+					<p>26.98153</p>
+					<p>Al</p>
+					<p>13</p>
+				</div>
+				<div class="divTableCell">
+					<p>28.0855</p>
+					<p>Si</p>
+					<p>14</p>
+				</div>
+				<div class="divTableCell">
+					<p>30.97696</p>
+					<p>P</p>
+					<p>15</p>
+				</div>
+				<div class="divTableCell">
+					<p>32.065</p>
+					<p>S</p>
+					<p>16</p>
+				</div>
+				<div class="divTableCell">
+					<p>35.453</p>
+					<p>Cl</p>
+					<p>17</p>
+				</div>
+				<div class="divTableCell">
+					<p>39.948</p>
+					<p>Ar</p>
+					<p>18</p>
+				</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">4</div>
+				<div class="divTableCell">
+					<p>39.0983</p>
+					<p>K</p>
+					<p>19</p>
+				</div>
+				<div class="divTableCell">
+					<p>40.078</p>
+					<p>Ca</p>
+					<p>20</p>
+				</div>
+				<div class="divTableCell">
+					<p>44.95591</p>
+					<p>Sc</p>
+					<p>21</p>
+				</div>
+				<div class="divTableCell">
+					<p>47.867</p>
+					<p>Ti</p>
+					<p>22</p>
+				</div>
+				<div class="divTableCell">
+					<p>50.9415</p>
+					<p>V</p>
+					<p>23</p>
+				</div>
+				<div class="divTableCell">
+					<p>51.9962</p>
+					<p>Cr</p>
+					<p>24</p>
+				</div>
+				<div class="divTableCell">
+					<p>54.93804</p>
+					<p>Mn</p>
+					<p>25</p>
+				</div>
+				<div class="divTableCell">
+					<p>55.845</p>
+					<p>Fe</p>
+					<p>26</p>
+				</div>
+				<div class="divTableCell">
+					<p>58.93319</p>
+					<p>Co</p>
+					<p>27</p>
+				</div>
+				<div class="divTableCell">
+					<p>58.6934</p>
+					<p>Ni</p>
+					<p>28</p>
+				</div>
+				<div class="divTableCell">
+					<p>63.546</p>
+					<p>Cu</p>
+					<p>29</p>
+				</div>
+				<div class="divTableCell">
+					<p>65.546</p>
+					<p>Zn</p>
+					<p>30</p>
+				</div>
+				<div class="divTableCell">
+					<p>69.723</p>
+					<p>Ga</p>
+					<p>31</p>
+				</div>
+				<div class="divTableCell">
+					<p>72.64</p>
+					<p>Ge</p>
+					<p>32</p>
+				</div>
+				<div class="divTableCell">
+					<p>74.92160</p>
+					<p>As</p>
+					<p>33</p>
+				</div>
+				<div class="divTableCell">
+					<p>78.96</p>
+					<p>Se</p>
+					<p>34</p>
+				</div>
+				<div class="divTableCell">
+					<p>79.904</p>
+					<p>Br</p>
+					<p>35</p>
+				</div>
+				<div class="divTableCell">
+					<p>83.798</p>
+					<p>Kr</p>
+					<p>36</p>
+				</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">5</div>
+				<div class="divTableCell">
+					<p>85.4678</p>
+					<p>Rb</p>
+					<p>37</p>
+				</div>
+				<div class="divTableCell">
+					<p>87.62</p>
+					<p>Sr</p>
+					<p>38</p>
+				</div>
+				<div class="divTableCell">
+					<p>88.90585</p>
+					<p>Y</p>
+					<p>39</p>
+				</div>
+				<div class="divTableCell">
+					<p>91.224</p>
+					<p>Zr</p>
+					<p>40</p>
+				</div>
+				<div class="divTableCell">
+					<p>92.90638</p>
+					<p>Nb</p>
+					<p>41</p>
+				</div>
+				<div class="divTableCell">
+					<p>95.96</p>
+					<p>Mo</p>
+					<p>42</p>
+				</div>
+				<div class="divTableCell">
+					<p>(98)</p>
+					<p>Tc</p>
+					<p>43</p>
+				</div>
+				<div class="divTableCell">
+					<p>101.07</p>
+					<p>Ru</p>
+					<p>44</p>
+				</div>
+				<div class="divTableCell">
+					<p>102.9055</p>
+					<p>Rh</p>
+					<p>45</p>
+				</div>
+				<div class="divTableCell">
+					<p>106.42</p>
+					<p>Pd</p>
+					<p>46</p>
+				</div>
+				<div class="divTableCell">
+					<p>107.8682</p>
+					<p>Ag</p>
+					<p>47</p>
+				</div>
+				<div class="divTableCell">
+					<p>112.441</p>
+					<p>Cd</p>
+					<p>48</p>
+				</div>
+				<div class="divTableCell">
+					<p>114.818</p>
+					<p>In</p>
+					<p>49</p>
+				</div>
+				<div class="divTableCell">
+					<p>118.710</p>
+					<p>Sn</p>
+					<p>50</p>
+				</div>
+				<div class="divTableCell">
+					<p>121.760</p>
+					<p>Sb</p>
+					<p>51</p>
+				</div>
+				<div class="divTableCell">
+					<p>127.60</p>
+					<p>Te</p>
+					<p>52</p>
+				</div>
+				<div class="divTableCell">
+					<p>126.9044</p>
+					<p>I</p>
+					<p>53</p>
+				</div>
+				<div class="divTableCell">
+					<p>131.293</p>
+					<p>Xe</p>
+					<p>54</p>
+				</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">6</div>
+				<div class="divTableCell">
+					<p>132.9054</p>
+					<p>Cs</p>
+					<p>55</p>
+				</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">7</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell"></div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+			</div>
+			<div class="divTableRow">
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+				<div class="divTableCell">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
