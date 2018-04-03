@@ -1,0 +1,81 @@
+/*
+** Global styles
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+	font-family: 'Roboto', sans-serif;
+	background: url("http://airwheelx.com/wp-content/uploads/2014/11/web-background-images-hd-wallpapers-res-wallpaper-web-page-background-design-blue-pattern-white-cute-hijau-images-hd-wallpapers.jpg") repeat;
+	background-size: 100%;
+}
+
+/*
+** Table styles
+*/
+
+.divTable{
+	display: table;
+	width: 100%;
+	border-spacing: 0.4vw;
+	border-collapse: separate;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell {
+	border: 0.15vw solid #000;
+	display: table-cell;
+	padding: 0.2vw 0.2vw;
+}
+.mass {
+	font-size: 0.8vw;
+	text-align: right;
+	padding: 0.2vw;
+	margin: 0;
+}
+.element {
+	font-size: 2vw;
+	text-align: center;
+	padding: 0.2vw;
+	margin: 0;
+	font-weight: bold;
+}
+.elem-number {
+	font-size: 1.2vw;
+	text-align: left;
+	padding: 0.2vw;
+	margin: 0;
+}
+.col-row-numbers {
+	border: none;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1.2vw;
+}
+.col-row-numbers p {
+	padding: 0.3vw;
+	margin: 0;
+}
+.hide {
+	visibility: hidden;
+}
+
+/*
+** Element colors
+*/
+
+.helium {background-color: #e8ff8e; }
+.first-column {background-color: #ff6564; }
+.second-column {background-color: #ffdead; }
+.third-color {background-color: #ffc2c1; }
+.fourth-color {background-color: #ffbfff; }
+.fiveth-color {background-color: #ff99cc; }
+.sixth-color {background-color: #e8e8e8; }
+.seventh-color {background-color: #cccccc; }
+.eighth-color {background-color: #cbcc97; }
+.nineth-color {background-color: #a1ffc3; }
+.tenth-color {background-color: #e8ff8e; }
+.eleventh-color {background-color: #bfffff; }
