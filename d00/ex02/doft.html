@@ -17,20 +17,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Day of the 42</title>
 	<link rel="stylesheet" type="text/css" href="doft.css">
 </head>
 <body>
-	<header>
-		<img alt="" src="resources/day_of_the_42.png">
-		<img alt="" src="resources/loupe.png">
-		<div class="header-link">
-			<a href=""><img alt="Start from the beginning" src="resources/reload.png"></a>
-			<a href=""><img alt="Disconnect" src="resources/close.gif"></a>
-		</div>
-	</header>
 	<div class="wrapper">
 
+		<div class="nav-bar">
+			<div id="logo">
+				<img alt="Day of the 42" title="Day of the 42" src="resources/day_of_the_42.png">
+			</div>
+			<div class="right-menu">
+				<div id="loupe">
+					<img alt="Loupe" src="resources/loupe.png">
+				</div>
+				<div class="actions">
+					<a id="reload" href="http://www.disneyinternational.com/" title="Start from the beginning">
+						<img alt="Start from the beginning" src="resources/reload.png">
+					</a>
+					<a id="disconnect" href="https://www.relaischateaux.com/us/" title="Disconnect">
+						<img alt="Disconnect" src="resources/close.gif">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="left-content">
+				<img src="resources/arrow.png" alt="Advance" title="Advance">
+				<img src="resources/main.png" alt="Take" title="Take">
+				<img id="bordered" src="resources/oeil.png" alt="Look" title="Look">
+				<img src="resources/outil.png" alt="Use" title="Use">
+				<img src="resources/chat-icon.png" alt="Speak" title="Speak">
+			</div>
+			<div class="main-content">
+				<img src="resources/cluster.jpg" alt="Cluster" title="Cluster">
+				<a href="https://www.ikea.com/" id="link-chair" title="IKEA" target="_blank"></a>
+				<a href="https://www.apple.com/" id="link-screen" title="Apple" target="_blank"></a>
+			</div>
+			<div class="right-content">
+				<img src="resources/book.png" alt="Book" title="Book">
+				<img src="resources/towel.png" alt="Towel" title="Towel">
+				<div id="brick" title="Brick"></div>
+			</div>
+		</div>
+
+		<div class="message">
+			<p>Vous <span id="capital">entrez</span> alors dans une grande piece remplie d'<span id="shadow">ordinateurs</span>...</p>
+			<i>- Bonjour, vous êtes nouveau ici ?</i>
+			<div class="form">
+				<input type="text">
+				<button>Repondre</button>
+			</div>
+		</div>
+
 	</div>
+
 </body>
 </html>
