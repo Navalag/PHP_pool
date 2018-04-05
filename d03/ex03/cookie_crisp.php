@@ -5,7 +5,7 @@ if ($_GET && isset($_GET['action'])) {
 		case 'set':
 			if (!isset($_GET['name']) || !isset($_GET['value']))
 				break;
-			setcookie($_GET['name'], $_GET['value']);
+			setcookie($_GET['name'], $_GET['value'], time() + 1000);
 			break;
 		case 'get':
 			if (!isset($_GET['name']) || !isset($_COOKIE[$_GET['name']]))
