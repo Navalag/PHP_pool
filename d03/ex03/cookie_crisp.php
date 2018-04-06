@@ -1,23 +1,11 @@
 <?php
 
-if ($_GET && isset($_GET['action'])) {
-	switch ($_GET['action']) {
-		case 'set':
-			if (!isset($_GET['name']) || !isset($_GET['value']))
-				break;
-			setcookie($_GET['name'], $_GET['value'], time() + 1000);
-			break;
-		case 'get':
-			if (!isset($_GET['name']) || !isset($_COOKIE[$_GET['name']]))
-				break;
-			echo $_COOKIE[$_GET['name']];
-			break;
-		case 'del':
-			if (!isset($_GET['name']) || !isset($_COOKIE[$_GET['name']]))
-				break;
-			setcookie($_GET['name'], "", -1);
-			break;
-	}
-}
+if($_GET['action'] == 'set')
+	setcookie($_GET['name'], $_GET['value'], time() + 1000);
+if($_GET['action'] == 'get')
+	if ($_COOKIE[$_GET['name']] != NULL)
+		echo $_COOKIE[$_GET['name']]."\n";
+if($_GET['action'] == 'del')
+	setcookie($_GET['name']);
 
 ?>
