@@ -1,4 +1,5 @@
 <?php 
+require 'server/install.php';
 include("inc/data.php");
 include("inc/functions.php");
 

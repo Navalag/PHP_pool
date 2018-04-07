@@ -1,5 +1,5 @@
 <?php
-function get_item_html($id, $item) {
+function get_item_html($id,$item) {
     $output = "<li><a href='details.php?id="
         . $id ."'><img src='" 
         . $item["img"] . "' alt='" 
@@ -9,7 +9,7 @@ function get_item_html($id, $item) {
     return $output;
 }
 
-function array_category($catalog, $category) {
+function array_category($catalog,$category) {
     $output = array();
     
     foreach ($catalog as $id => $item) {
