@@ -21,10 +21,10 @@ include("inc/header.php"); ?>
 			echo "<p>Success !</p>";
 		}
 		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_passw") {
-			echo "<p>Wrong Password!</p>";
-		}
-		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_tel") {
-			echo "<p>Wrong phone number!</p>";
+			echo "<p>Wrong Password or phone number!</p>";
+			echo "<form href='http://localhost:8100/index.php'>
+			<input type='submit' name='Back' value='Back'/>
+			</form>";
 		}
 		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_connection") {
 			echo "<p>Connection Faild!</p>";
@@ -40,7 +40,7 @@ include("inc/header.php"); ?>
 		}
 		else if ($section == null) {
 		echo "<h1>Please <span id='select-text'>Sign In</span> to make a purchase</h1>
-		 	<h2>Or <a href='suggest.php?cat=signup' style='cursor: pointer; font-weight: 900;'>Sing Up</a> if you are the first time here</h2>";
+			<h2>Or <a href='suggest.php?cat=signup' style='cursor: pointer; font-weight: 900;'>Sing Up</a> if you are the first time here</h2>";
 		echo '<form method="post" action="server/signin.php">
 				<table>
 					<tr>
@@ -80,29 +80,6 @@ include("inc/header.php"); ?>
 			</form>';
 		}?>
 
-		
-		<!--  <form method="post" action="signup.php">
-				<table>
-					<tr>
-						<th><label for="name">Name</label></th>
-						<td><input type="text" id="name" name="name" /></td>
-					</tr>
-					<tr>
-						<th><label for="email">Email</label></th>
-						<td><input type="text" id="email" name="email" /></td>
-					</tr>
-					<tr>
-						<th><label for="details">Suggest Item Details</label></th>
-						<td><textarea id="details" name="details"></textarea></td>
-					</tr> -->
-					<!-- <tr style="display:none">
-						<th><label for="address">Address</label></th>
-						<td><input type="text" id="address" name="address" />
-						<p>Please leave this field blank</p></td>
-					</tr> -->
-			<!-- 	</table>
-				<input type="submit" value="Send" />
-		 </form> -->
 	</div>
 </div>
 

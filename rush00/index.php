@@ -1,11 +1,9 @@
 <?php 
 require 'server/install.php';
-include("inc/data.php");
 include("inc/functions.php");
 
 $pageTitle = "Simple 42.";
 $section = null;
-$login = false;
 
 include("inc/header.php"); ?>
 
@@ -15,10 +13,40 @@ include("inc/header.php"); ?>
 		<h2>May we suggest something?</h2>
 		<ul class="items">
 			<?php
-				$random = array_rand($catalog, 4);
-				foreach ($random as $id) {
-					echo get_item_html($id, $catalog[$id]);
+			$servername = "localhost";
+			$username = "web";
+			$password = "1234";
+			$databasename = "foodshop";
+			$connect = mysqli_connect($servername, $username, $password, $databasename);
+			if($connect) {
+				for ($i = 1; $i <= 4; $i++) {
+					$category = rand(1, 3);
+					switch ($category) {
+						case(1): {
+							$chose = "music";
+							$IDname = "musicID";
+						}
+							break;
+						case (2): {
+							$chose = "movie";
+							$IDname = "movieID";
+						}
+							break;
+						case (3): {
+							$chose = "book";
+							$IDname = "BookID";
+						}
+							break;
+					}
+					$query = "SELECT * FROM " . $chose . " WHERE " . $IDname . "=" . $i . ";";
+					if ($result = mysqli_query($connect, $query)) {
+						if($data = mysqli_fetch_array($result)) {
+							echo get_item_html($i, $data);
+						}
+					}
 				}
+				mysqli_close($connect);
+			}
 			?>
 		</ul>
 	</div>

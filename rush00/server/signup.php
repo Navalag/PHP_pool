@@ -12,30 +12,26 @@ $databasename = "foodshop";
 /**
  * email must be unique!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$tel = trim(filter_input(INPUT_POST,"tel",FILTER_SANITIZE_STRING));
 	$name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
 	$passwd = trim(filter_input(INPUT_POST,"passwd",FILTER_SANITIZE_EMAIL));
 	$conf_passwd = trim(filter_input(INPUT_POST,"conf_passwd",FILTER_SANITIZE_EMAIL));
-
 	if ($tel == "" || $name == "" || $passwd == "" || $conf_passwd == "") {
 		header("location:http://localhost:8100/suggest.php?status=wrong_data");
 	}
 }
-
 $user_exist = false;
 if ($_POST['name'] && $_POST['tel'] && $_POST['passwd'] && $_POST['conf_passwd'] && $_POST['submit'] && $_POST['submit'] == "Send") {
 	$connect = mysqli_connect($servername, $username, $password, $databasename);
 	if ($connect) {
-		$result = mysqli_query($connect, "SELECT * FROM users WHERE UserID=3");
-		$data = mysqli_fetch_array($result);
-		do {
+		$result = mysqli_query($connect, "SELECT * FROM users");
+		while ($data = mysqli_fetch_array($result)) {
 			if ($data['PhoneNumber'] == $_POST['tel']) {
 				header("location:http://localhost:8100/suggest.php?status=user_exist");
 				$user_exist = true;
 			}
-		} while ($data = mysqli_fetch_array($result));
+		}
 		if ($user_exist == false) {
 			if ($_POST['passwd'] == $_POST['conf_passwd']) {
 				$query = "INSERT INTO users(FirstName, Password, PhoneNumber)

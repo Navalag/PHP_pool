@@ -1,27 +1,19 @@
 <?php
-function get_item_html($id,$item) {
-	$output = "<li><a href='details.php?id="
-		. $id ."'><img src='" 
-		. $item["img"] . "' alt='" 
-		. $item["title"] . "' />" 
-		. "<p>View Details</p>"
-		. "</a></li>";
-	return $output;
-}
-
-function array_category($catalog,$category) {
-	$output = array();
-	
-	foreach ($catalog as $id => $item) {
-		if ($category == null OR strtolower($category) == strtolower($item["category"])) {
-			$sort = $item["title"];
-			$sort = ltrim($sort,"The ");
-			$sort = ltrim($sort,"A ");
-			$sort = ltrim($sort,"An ");
-			$output[$id] = $sort;            
-		}
+function get_item_html($id, $data) {
+	if ($data['category'] == "Movies") {
+		$catID = 1;
 	}
-	
-	asort($output);
-	return array_keys($output);
+	if ($data['category'] == "Music") {
+		$catID = 2;
+	}
+	if ($data['category'] == "Books") {
+		$catID = 3;
+	}
+		$output = "<li><a href='details.php?id="
+			. $id . "&catID=".$catID."'><img src='"
+			. $data['img'] . "' alt='"
+			. $data['title'] . "' />"
+			. "<p>View Details</p>"
+			. "</a></li>";
+		return $output;
 }

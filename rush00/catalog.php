@@ -1,5 +1,5 @@
 <?php 
-include("inc/data.php");
+// include("inc/data.php");
 include("inc/functions.php");
 
 $pageTitle = "Full Catalog";
@@ -9,14 +9,28 @@ if (isset($_GET["cat"])) {
 	if ($_GET["cat"] == "books") {
 		$pageTitle = "Books";
 		$section = "books";
+		$chose = "book";
+		$IDname = "BookID";
 	} else if ($_GET["cat"] == "movies") {
 		$pageTitle = "Movies";
 		$section = "movies";
+		$chose = "movie";
+		$IDname = "movieID";
 	} else if ($_GET["cat"] == "music") {
 		$pageTitle = "Music";
 		$section = "music";
+		$chose = "music";
+		$IDname = "musicID";
 	}
 }
+
+$servername = "localhost";
+$username = "web";
+$password = "1234";
+$databasename = "foodshop";
+$connect = mysqli_connect($servername, $username, $password, $databasename);
+
+
 
 include("inc/header.php"); ?>
 
@@ -31,10 +45,36 @@ include("inc/header.php"); ?>
 		
 		<ul class="items">
 			<?php
-				$categories = array_category($catalog,$section);
-				foreach ($categories as $id) {
-					echo get_item_html($id,$catalog[$id]);
+			if ($connect) {
+				if ($section) {
+					$query = "SELECT * FROM " . $chose . ";";
+					if ($result = mysqli_query($connect, $query))
+						$data = mysqli_fetch_array($result);
+					do {
+						echo get_item_html($data[$IDname], $data);
+					} while ($data = mysqli_fetch_array($result));
+				} else {
+					$query = "SELECT * FROM movie;";
+					if ($result = mysqli_query($connect, $query))
+						$data = mysqli_fetch_array($result);
+					do {
+						echo get_item_html($data['movieID'], $data);
+					} while ($data = mysqli_fetch_array($result));
+					$query = "SELECT * FROM music;";
+					if ($result = mysqli_query($connect, $query))
+						$data = mysqli_fetch_array($result);
+					do {
+						echo get_item_html($data['musicID'], $data);
+					} while ($data = mysqli_fetch_array($result));
+					$query = "SELECT * FROM book;";
+					if ($result = mysqli_query($connect, $query))
+						$data = mysqli_fetch_array($result);
+					do {
+						echo get_item_html($data['BookID'], $data);
+					} while ($data = mysqli_fetch_array($result));
 				}
+				mysqli_close($connect);
+			}
 			?>
 		</ul>
 
