@@ -30,7 +30,7 @@ if ($base_created) {
         $res=mysqli_query($connect, "CREATE TABLE users 
         (UserID int UNSIGNED AUTO_INCREMENT NOT NULL,
         FirstName varchar(100) NOT NULL,
-        SecondName varchar(100) NOT NULL,
+        SecondName varchar(100),
         Password varchar(100) NOT NULL,
         email varchar(200) NULL UNIQUE,
         PhoneNumber varchar(20) NOT NULL UNIQUE,

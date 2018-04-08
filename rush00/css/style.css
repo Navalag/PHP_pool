@@ -133,6 +133,8 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin: 0.83em 0;
+    font-weight: normal;
+    text-align: center;
 }
 
 h3 {
@@ -558,6 +560,12 @@ body {font-family: 'Open Sans', sans-serif; background:#f0eeed; color: #676767;}
 .header .nav li.movies a {background-position: 13px -105px;}
 .header .nav li.music a {background-position: 15px -235px;}
 .header .nav li.suggest a {background-position: 35px -340px;}
+.header .nav li.registration a {
+    background-position: 35px -340px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px !important;
+}
 
 #content {
     min-height: 400px; 
@@ -649,9 +657,13 @@ body {font-family: 'Open Sans', sans-serif; background:#f0eeed; color: #676767;}
     width: 460px;
     float: right;
 }
-.media-details form {
-    margin-left: 0;
+.media-details form { margin-left: 0; }
+
+/* FORM STYLES */
+#select-text {
+    font-weight: 900;
 }
+#header-center {text-align: center;}
 form {width: 475px; margin: 34px auto;}
 form tr {text-align:left;}
 form table {width: 475px; margin-bottom: 16px;}

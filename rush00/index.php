@@ -5,6 +5,7 @@ include("inc/functions.php");
 
 $pageTitle = "Simple 42.";
 $section = null;
+$login = false;
 
 include("inc/header.php"); ?>
 

@@ -1,60 +1,86 @@
 <?php 
-//Import the PHPMailer class into the global namespace
-//use PHPMailer\PHPMailer\PHPMailer;
-require 'vendor/php_mailer/src/PHPMailer.php';
-require 'vendor/php_mailer/src/Exception.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
-	$email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL));
-	$details = trim(filter_input(INPUT_POST,"details",FILTER_SANITIZE_SPECIAL_CHARS));
-	
-	if ($name == "" || $email == "" || $details == "") {
-		echo "Please fill in the required fields: Name, Email and Details";
-		exit;
-	}
-	// if ($_POST["address"] != "") {
-	// 	echo "Bad from input";
-	// 	exit;
-	// }
-	// if (!PHPMailer::validateAddress($email)) {
-	// 	echo "Invalid Email Address";
-	// 	exit;
-	// }
-	
-	// $email_body = "";
-	// $email_body .= "Name " . $name . "\n";
-	// $email_body .= "Email " . $email . "\n";
-	// $email_body .= "Details " . $details . "\n";
-	
-	// $mail = new PHPMailer;
-	// //It's important not to use the submitter's address as the from address as it's forgery,
-	// //which will cause your messages to fail SPF checks.
-	// //Use an address in your own domain as the from address, put the submitter's address in a reply-to
-	// $mail->setFrom('agalavan@student.unit.ua', $name);
-	// $mail->addReplyTo($email, $name);
-	// $mail->addAddress('agalavan@student.unit.ua', 'Andrew Galavan');
-	// $mail->Subject = 'Library suggestion from ' . $name;
-	// $mail->Body = $email_body;
-	// if (!$mail->send()) {
-	// 		echo "Mailer Error: " . $mail->ErrorInfo;
-	// 		exit;
-	// }
-	header("location:suggest.php?status=thanks");
+$pageTitle = "Sign In";
+$section = null;
+
+if (isset($_GET["cat"]) && $_GET["cat"] == "signup") {
+	$pageTitle = "Sign Up";
+	$section = "signup";
 }
-
-$pageTitle = "Suggest a Media Item";
-$section = "suggest";
 
 include("inc/header.php"); ?>
 
 <div class="section page">
 	<div class="wrapper">
-		 <h1>Suggest a Media Item</h1>
-		 <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
-				echo "<p>Thanks for the email! I&rsquo;ll check out your suggestion shortly!</p>";
-		 } else { ?>
-		 <p>If you think there is something I&rsquo;m missing, let me know! Complete the form to send me an email.</p>
+
+		<?php 
+		if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
+			echo "<p>Thank you for registration. Now you can make a purchase</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "success") {
+			echo "<p>Success !</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_passw") {
+			echo "<p>Wrong Password!</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_tel") {
+			echo "<p>Wrong phone number!</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_connection") {
+			echo "<p>Connection Faild!</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "wrong_data") {
+			echo "<p>Please fill all fields</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "user_exist") {
+			echo "<p>User with this phone number already exist!</p>";
+		}
+		else if (isset($_GET["status"]) && $_GET["status"] == "passwd_error") {
+			echo "<p>Password Error! Passwords are not equals!</p>";
+		}
+		else if ($section == null) {
+		echo "<h1>Please <span id='select-text'>Sign In</span> to make a purchase</h1>
+		 	<h2>Or <a href='suggest.php?cat=signup' style='cursor: pointer; font-weight: 900;'>Sing Up</a> if you are the first time here</h2>";
+		echo '<form method="post" action="server/signin.php">
+				<table>
+					<tr>
+						<th><label for="tel">Phone number</label></th>
+						<td><input type="text" id="tel" name="tel" /></td>
+					</tr>
+					<tr>
+						<th><label for="passwd">Password</label></th>
+						<td><input type="password" id="passwd" name="passwd" /></td>
+					</tr>
+				</table>
+				<input type="submit" name="submit" value="Send" />
+			</form>';
+		} 
+		else if ($section == "signup") {
+		echo "<h1>Please fill in all required fields</h1>";
+		echo '<form method="post" action="server/signup.php">
+				<table>
+					<tr>
+						<th><label for="name">Name</label></th>
+						<td><input type="text" id="name" name="name" /></td>
+					</tr>
+					<tr>
+						<th><label for="tel">Phone Number</label></th>
+						<td><input type="text" id="tel" name="tel" /></td>
+					</tr>
+					<tr>
+						<th><label for="passwd">Password</label></th>
+						<td><input type="password" id="passwd" name="passwd" /></td>
+					</tr>
+					<tr>
+						<th><label for="conf_passwd">Confirm password</label></th>
+						<td><input type="password" id="conf_passwd" name="conf_passwd" /></td>
+					</tr>
+				</table>
+				<input type="submit" name="submit" value="Send" />
+			</form>';
+		}?>
+
+		
 		<!--  <form method="post" action="signup.php">
 				<table>
 					<tr>
@@ -77,56 +103,6 @@ include("inc/header.php"); ?>
 			<!-- 	</table>
 				<input type="submit" value="Send" />
 		 </form> -->
-		 <br>
-		 <br>
-		 <br>
-		 <form method="post" action="server/signup.php">
-				<table>
-					<tr>
-						<th><label for="f_name">First Name</label></th>
-						<td><input type="text" id="f_name" name="f_name" /></td>
-					</tr>
-					<tr>
-						<th><label for="s_name">Second Name</label></th>
-						<td><input type="text" id="s_name" name="s_name" /></td>
-					</tr>
-					<tr>
-						<th><label for="tel_2">Phone Number</label></th>
-						<td><input type="text" id="tel_2" name="tel_2" /></td>
-					</tr>
-					<tr>
-						<th><label for="address">Address</label></th>
-						<td><input type="text" id="address" name="address" /></td>
-					</tr>
-					<tr>
-						<th><label for="passwd_2">Password</label></th>
-						<td><input type="password" id="passwd_2" name="passwd_2" /></td>
-					</tr>
-					<tr>
-						<th><label for="conf_passwd">Confirm password</label></th>
-						<td><input type="password" id="conf_passwd" name="conf_passwd" /></td>
-					</tr>
-				</table>
-				<input type="submit" name="submit_reg" value="Send" />
-			</form>
-			<br>
-			<br>
-			<br>
-			<h1>Sign in</h1>
-		 	<form method="post" action="server/signin.php">
-				<table>
-					<tr>
-						<th><label for="tel">Phone number</label></th>
-						<td><input type="text" id="tel" name="tel" /></td>
-					</tr>
-					<tr>
-						<th><label for="passwd">Password</label></th>
-						<td><input type="password" id="passwd" name="passwd" /></td>
-					</tr>
-				</table>
-				<input type="submit" name="submit" value="Send" />
-			</form>
-		<?php } ?>
 	</div>
 </div>
 
