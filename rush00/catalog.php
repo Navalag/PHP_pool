@@ -1,5 +1,4 @@
 <?php 
-// include("inc/data.php");
 include("inc/functions.php");
 
 $pageTitle = "Full Catalog";

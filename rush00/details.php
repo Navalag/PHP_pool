@@ -1,5 +1,4 @@
 <?php 
-// include("inc/data.php");
 include("inc/functions.php");
 
 if (isset($_GET["id"])) {
@@ -106,10 +105,10 @@ include("inc/header.php"); ?>
 					<td><?php echo $item["Price"]."$"; ?></td>
 				</tr>
 			</table>
-			<form action="inc/buy.php" method="GET">
+			<form action="buy.php" method="GET">
 				<input type="submit" name="Buy" value="Purchase"/>
-				<input style="display: none" type="text" name="id" value="<?php echo $id; ?>">
-				<input style="display: none" type="text" name="catID" value="<?php echo $catID;?>">
+				<input style="display: none" type="text" name="id" value=<?php echo $id; ?>>
+				<input style="display: none" type="text" name="catID" value=<?php echo $catID;?>>
 			</form>
 		</div>
 	</div>
