@@ -1,0 +1,91 @@
+#controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: #4b00ff38;
+
+}
+#step {
+	width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#solution {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    margin-left: -50px;
+}
+
+#up_step button, #left_step button, #rigth_step button, #down_step button {
+	background-color: #ff4f4f00;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 60px 19px rgba(255,0,0,1);
+	-moz-box-shadow: 0px 0px 60px 19px rgba(255,0,0,1);
+	box-shadow: 0px 0px 60px 19px rgba(255,0,0,1);
+	outline: 0 !important;
+	border: 0px;
+}
+#up_step button:hover, #left_step button:hover, #rigth_step button:hover, #down_step button:hover {
+	background-color: #ff1212cf;
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+	-ms-transition: background 0.3s ease;
+	-o-transition: background 0.3s ease;
+	transition: background 0.3s ease;
+
+}
+
+#up_step button, #down_step button {
+	height: 100px;
+	width: 45px;
+}
+#hor_way {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 300px;
+}
+#left_step button, #rigth_step button  {
+    width: 100px;
+    height: 45px;
+}
+#shoot button {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+	background-color: #0000ff00;
+	margin-left: 50px;
+	outline: 0 !important;
+	border: 0px;
+	-webkit-box-shadow: 0px 0px 60px 19px rgb(16, 255, 0);
+	-moz-box-shadow: 0px 0px 60px 19px rgb(16, 255, 0);
+	box-shadow: 0px 0px 60px 19px rgb(16, 255, 0);
+}
+#change button {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+	background-color: #0000ff00;
+    margin-top: 40px;
+	border: 0px;
+	outline: 0 !important;
+	-webkit-box-shadow: 0px 0px 60px 19px rgb(0, 243, 255);
+	-moz-box-shadow: 0px 0px 60px 19px rgb(0, 243, 255);
+	box-shadow: 0px 0px 60px 19px rgb(0, 243, 255);
+}
+#shoot button:hover {
+	background-color: rgba(16, 255, 0, 0.84);
+}
+
+#change button:hover {
+	background-color: rgba(0, 243, 255, 0.82);
+}
+
+
+
+
+

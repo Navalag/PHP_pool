@@ -1,0 +1,22 @@
+@font-face{
+
+font-family: "SpaceAge";
+
+src: url("../fonts/fonts/aurora/spaceage.ttf") format("woff"),
+
+url("../fonts/fonts/aurora/spaceage.ttf") format("truetype");
+
+font-weight: normal;
+
+font-style: normal;
+
+}
+
+@font-face{
+
+font-family: 'Aurora';
+src: url(../fonts/fonts/aurora/aurora.ttf);
+font-weight: normal;
+font-style: normal;
+
+}

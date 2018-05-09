@@ -1,0 +1,22 @@
+#dice:hover {
+	background-color: #4b00ff8f;
+
+}
+
+.dice_img {
+	position: relative;
+}
+
+.dice_img img {
+    margin: 0;
+    width: 393px;
+}
+.dice_value {
+    font-size: 100px;
+	padding-left: 28px;
+    background: none;
+	outline: 0 !important;
+	border: 0px;
+	font-family: 'Audiowide', cursive;
+	color: #f6fcfc;
+}
